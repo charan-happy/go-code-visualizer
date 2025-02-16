@@ -1,0 +1,53 @@
+{
+  "name": "go-code-visualizer",
+  "displayName": "Go Code Visualizer",
+  "description": "A tool to visualize the flow of Go code.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "activationEvents": [
+    "onCommand:goCodeVisualizer.visualize"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "goCodeVisualizer.visualize",
+        "title": "Visualize Go Code"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charan-happy/go-code-visualizer"
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "go",
+    "visualization"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext .ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.26.9",
+    "@babel/parser": "^7.26.9",
+    "@babel/traverse": "^7.26.9",
+    "d3-graphviz": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.13.4",
+    "@types/vscode": "^1.60.0"
+  }
+}
